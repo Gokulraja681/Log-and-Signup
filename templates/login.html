@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
+</head>
+<body>
+    <div class="container">
+        <form action="/login" method="post">
+            <label for="lmail">Mail-ID</label>
+            <input type="text" name="lmail" id=""><br><br>
+
+            <label for="lpass">Password</label>
+            <input type="password" name="lpass" id=""><br><br>
+
+            <input type="submit" name="submit" value="Login">
+            
+            {% if msg1 %}
+                <p class="success-message">{{msg1}}</p>
+            {% elif msg2 %}
+                <p class="error-message">{{msg2}}</p>
+            {% endif %}
+        </form>
+
+        <form action="/">
+            <input type="submit" value="Back">
+        </form>
+    </div>
+</body>
+</html>

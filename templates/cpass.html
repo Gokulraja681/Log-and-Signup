@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Change Password</title>
+    </head>
+
+<body>
+    <center>
+        <h1>This is my Password Change Page</h1>
+        <form action="/c_password" method="post">
+            <label for="Mail">Mail-ID</label>
+            <input type="text" name="cmail" id=""><br><br>
+            <label for="Password">Reset Password</label>
+            <input type="password" name="cpass" id=""><br><br>
+            <label for="Confirm">Confirm Password</label>
+            <input type="password" name="pwsd" id=""><br><br>
+            <input type="submit" name="submit" value="Confirm">
+            {% if msg %}
+               <p style="color: green;">{{msg}}</p>
+            {% endif %}
+        </form>
+        <form action="/">
+            <input type="submit" value="Back">
+        </form>
+    </center>
+</body>
+</html>

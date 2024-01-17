@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='profile.css')}}">
+</head>
+<body>
+    <form action="/profile" method="get">
+        <div class="Datas">
+            <p>Username: {{fname}} {{lname}}</p><br>
+            <p>Date of Birth: {{dob}}</p><br>
+            <p>Mobile Number: {{mbno}}</p><br>
+            <p>Mail-ID: {{mail}}</p><br>
+            <p>Password: {{pwsd}}</p>
+        </div>
+    </form>
+    <form action="/">
+        <input type="submit" value="Back">
+    </form>
+</body>
+</html>

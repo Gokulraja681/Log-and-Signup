@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='signup.css')}}">
+</head>
+<body>
+    <div class="container">
+        <form action="/signup" method="post" autocomplete="off">
+            <h1>Sign Up</h1>
+
+            <div class="input-group">
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname">
+            </div>
+
+            <div class="input-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname">
+            </div>
+
+            <div class="input-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="text" name="dob">
+            </div>
+
+            <div class="input-group">
+                <label for="mbno">Mobile Number:</label>
+                <input type="text" name="mbno">
+            </div>
+
+            <div class="input-group">
+                <label for="mail">Mail-ID:</label>
+                <input type="text" name="mail">
+            </div>
+
+            <div class="input-group">
+                <label for="p">Password:</label>
+                <input type="password" name="pwsd">
+            </div>
+
+            <div class="input-group">
+                <label for="pwsd">Confirm Password:</label>
+                <input type="password" name="p">
+            </div>
+
+            <div class="button-container">
+                <input type="submit" name="submit" value="Submit">
+                <input type="reset" name="reset" value="Reset">
+            </div> <br>
+        </form>
+
+        {% if password_match_error %}
+            <p class="error-message">{{ password_match_error }}</p>
+        {% endif %}
+        
+        {% if account_created %}
+            <p class="success-message">{{ account_created }}</p>
+        {% endif%}
+
+        <form action="/">
+            <input type="submit" name="back" value="Back">
+        </form>
+    </div>
+</body>
+</html>
